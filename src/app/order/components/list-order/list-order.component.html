@@ -1,5 +1,28 @@
 <app-template-a [title]="title" [subtitle]="subtitle">
-    <app-button [path]="['add']" [label]="'Ajouter une commande'" class="m-3"></app-button>
-    <app-button [path]="null" [label]="'Ajouter une commande'" class="m-3"></app-button>
+  <app-button [path]="['add']" [label]="'Ajouter une commande'" class="m-3"></app-button>
+  <app-button [path]="null" [label]="'Ajouter une commande'" class="m-3"></app-button>
+
+
+
+  <app-table-light *ngIf="orders$ | async as orders" [headers]="headers">
+    <tr *ngFor="let order of orders">
+      <td>{{ order.typePresta }}</td>
+      <td>{{ order.client}}</td>
+      <td>{{ order.nbJours}}</td>
+      <td>{{ order.tjmHt}}</td>
+      <!-- <td>{{ order.Total HT}}</td>
+      <td>{{ order.Total TTC}}</td> -->
+      <td>
+        <select class="form-control" #selectElement (change)="changeState(order, selectElement.value)">
+          <option *ngFor="let state of states" [value]="state" [selected]="state === order.state">
+            {{ state }}
+          </option>
+        </select>
+      </td>
+      <td>
+        <!-- <app-icon-edit class="ml-3 mr-3" [routerLink]="['edit', order.id]"></app-icon-edit> -->
+        <app-icon-trash></app-icon-trash>
+      </td>
+    </tr>
+  </app-table-light>
 </app-template-a>
-    

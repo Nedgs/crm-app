@@ -3,8 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { OrderRoutingModule } from './order-routing.module';
 import { ListOrderComponent } from './components/list-order/list-order.component';
+import {SharedModule} from '../shared/shared.module';
+import {HttpClientModule} from '@angular/common/http';
+
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+import {UiModule} from '../ui/ui.module';
 import { AddOrderComponent } from './components/add-order/add-order.component';
-import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -12,7 +17,11 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     OrderRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    UiModule
   ]
 })
 export class OrderModule { }
