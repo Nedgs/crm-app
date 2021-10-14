@@ -1,0 +1,25 @@
+<app-template-a [title]="title" [subtitle]="subtitle">
+  <app-button (buttonClick)="onButtonClick($event)" [path]="['add']" [label]="'Ajouter un client'" class="m-3"></app-button>
+  <app-button (buttonClick)="onButtonClick($event)" [path]="null" [label]="'Ajouter un client'" class="m-3"></app-button>
+  <app-table-light *ngIf="clients$ | async as clients"
+                   [headers]="headers">
+    <tr *ngFor="let client of clients">
+      <td>{{ client.name }}</td>
+      <td>{{ client.ca | currency:'EUR' }}</td>
+      <td>{{ client | total:'cattc' | currency:'EUR' }}</td>
+      <td>
+        <select class="form-control" #selectElement (change)="changeState(client, selectElement.value)">
+          <option *ngFor="let state of states"
+                  [value]="state"
+                  [selected]="state === client.state">
+            {{ state }}
+          </option>
+        </select>
+      </td>
+      <td>
+        <app-icon-edit class="ml-3 mr-3" [routerLink]="['edit', client.id]"></app-icon-edit>
+        <app-icon-trash></app-icon-trash>
+      </td>
+    </tr>
+  </app-table-light>
+</app-template-a>

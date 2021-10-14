@@ -1,0 +1,50 @@
+@import "theme";
+@import "layout";
+
+/// Description design of user interface
+header {
+  height: 65px;
+  background: $light-color;
+  padding: 0 $gutter;
+  display: flex;
+  align-items: center;
+}
+
+main {
+  background: darken($light-color, 5);
+  min-height: calc(100vh - 65px);
+  padding-top: 65px;
+}
+
+aside {
+  background: darken($light-color, 10);
+  width: 250px;
+  min-height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  .scroller {
+    overflow-y: auto;
+    max-height: 100vh;
+    padding-bottom: 65px;
+  }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 65px);
+}
+
+.contents {
+  flex-grow: 1;
+}
+
+footer {
+  background: $light-color;
+}
+
+@media (min-width: $md-breakpoint) {
+  .contents, footer {
+    margin-left: 250px;
+  }
+}

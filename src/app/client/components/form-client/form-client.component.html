@@ -1,0 +1,23 @@
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="nom">Name</label>
+    <input formControlName="name" type="text" class="form-control" id="nom">
+  </div>
+
+  <div class="form-group">
+    <label for="ca">CA</label>
+    <input formControlName="ca" type="number" class="form-control" id="ca">
+  </div>
+
+  <div class="form-group">
+    <label for="state">State</label>
+    <select id="state" formControlName="state" class="form-control form-select form-select-sm">
+      <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+    </select>
+  </div>
+
+  <button class="btn btn-primary">Valider</button>
+  <button type="button" [routerLink]="['/client']" class="ml-3 btn btn-danger">Retour</button>
+</form>
+

@@ -1,0 +1,26 @@
+<header class="fixed-top">
+  <ng-content select=".header"></ng-content>
+</header>
+<main>
+
+  <div class="shadow position-fixed">
+  </div>
+
+  <aside>
+    <div class="scroller">
+      <ng-content select=".sidemenu"></ng-content>
+    </div>
+  </aside>
+
+  <div class="page">
+
+    <div class="contents">
+      <ng-content select=".content"></ng-content>
+    </div>
+
+    <footer>
+      <ng-content select=".footer"></ng-content>
+    </footer>
+
+  </div>
+</main>
