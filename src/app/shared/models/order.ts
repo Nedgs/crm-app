@@ -8,7 +8,7 @@ export interface Order {
   id: number | null;
   typePresta: string | null;
   client: string | null;
-  nbJours: string | null;
-  tjmHt: string | null;
+  nbJours: number | null;
+  tjmHt: number | null;
   state: string | null;
 }
