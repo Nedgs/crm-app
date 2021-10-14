@@ -11,9 +11,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UiModule} from '../ui/ui.module';
 import { AddOrderComponent } from './components/add-order/add-order.component';
 
+import { FormOrderComponent } from './components/form-order/form-order.component';
+
 
 @NgModule({
-  declarations: [ListOrderComponent, AddOrderComponent],
+  declarations: [ListOrderComponent, AddOrderComponent, FormOrderComponent],
   imports: [
     CommonModule,
     OrderRoutingModule,

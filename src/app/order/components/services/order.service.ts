@@ -34,6 +34,10 @@ export class OrderService {
     return this.http.put<Order>(`http://localhost:3000/clients/${order}`, order);
   }
 
+  create(order: Order): Observable<Order> {
+    return this.http.post<Order>(`http://localhost:3000/orders`, order);
+  }
+
 
 
 
