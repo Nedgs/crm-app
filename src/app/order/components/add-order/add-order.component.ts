@@ -24,9 +24,12 @@ export class AddOrderComponent  {
 
   public order = {
     id: null,
-    name: null,
-    ca: 0,
-    state: OrderStateEnum.OPTION
+    typePresta: null,
+    client: null,
+    nbJours: 0,
+    tjmHt: 0,
+    tva: 20,
+    state: OrderStateEnum.OPTION,
   };
 
   constructor(

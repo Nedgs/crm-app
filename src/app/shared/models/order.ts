@@ -9,7 +9,7 @@ export interface Order {
   typePresta: string | null;
   client: string | null;
   nbJours: number;
-  tjmHt: number | null;
+  tjmHt: number;
   tva: number;
   state: string | null;
 }

@@ -9,11 +9,13 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class FormOrderComponent implements OnInit {
   @Input() init: Order = {
-
     id: null,
+    typePresta: null,
+    client: null,
+    nbJours: 0,
+    tjmHt: 0,
     tva: 20,
-    state: OrderStateEnum.OPTION
-
+    state: OrderStateEnum.OPTION,
   };
 
   @Output() submitted: EventEmitter<Order> = new EventEmitter<Order>();
@@ -29,8 +31,11 @@ export class FormOrderComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       id: [this.init.id],
-      // name: [this.init.name],
-      // ca: [this.init.ca],
+      typePresta: [this.init.typePresta],
+      client: [this.init.client],
+      nbJours: [this.init.nbJours],
+      tjmHt: [this.init.tjmHt],
+      tva: [this.init.tva],
       state: [this.init.state]
     });
   }

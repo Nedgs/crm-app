@@ -10,9 +10,8 @@
       <td>{{ order.client}}</td>
       <td>{{ order.nbJours}}</td>
       <td>{{ order.tjmHt}}</td>
-      <td>{{ order | total:'test' | currency:'EUR' }}</td>
-      <!-- <td>{{ order.Total HT}}</td>
-      <td>{{ order.Total TTC}}</td> -->
+      <td>{{ order | total:'ttc' | currency:'EUR' }}</td>
+      <td>{{ order | total | currency:'EUR' }}</td>
       <td>
         <select class="form-control" #selectElement (change)="changeState(order, selectElement.value)">
           <option *ngFor="let state of states" [value]="state" [selected]="state === order.state">
