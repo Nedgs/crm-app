@@ -18,7 +18,7 @@
       </td>
       <td>
         <app-icon-edit class="ml-3 mr-3" [routerLink]="['edit', client.id]"></app-icon-edit>
-        <app-icon-trash></app-icon-trash>
+        <app-icon-trash (click)="deleteClient(client)" [routerLink]="['client']"></app-icon-trash>
       </td>
     </tr>
   </app-table-light>
