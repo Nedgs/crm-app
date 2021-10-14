@@ -5,7 +5,7 @@ export enum OrderStateEnum {
 }
 
 export interface Order {
-  id: number | null,
+  id: number | null;
   typePresta: string | null;
   client: string | null;
   nbJours: number;
